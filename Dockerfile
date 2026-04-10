@@ -6,11 +6,11 @@ ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends \
-    build-essential cmake ca-certificates curl pkg-config git \
-    python3 python3-venv python3-pip python3-dev
+  apt-get install --yes --no-install-recommends \
+  build-essential cmake ca-certificates curl pkg-config git \
+  python3 python3-venv python3-pip python3-dev
 
-#  apt-get ha versione vecchia
+# apt-get ha versione vecchia
 RUN pip3 install patchelf
 
 WORKDIR /build
@@ -60,8 +60,8 @@ RUN /venv/bin/auditwheel repair /tmp/wheel/piper_phonemize-*.whl --plat manylinu
 # === TAR CLASSICO (come prima) ===
 WORKDIR /dist
 RUN mkdir -p piper_phonemize && \
-    cp -dR /build/install/* ./piper_phonemize/ && \
-    tar -czf "piper-phonemize_${TARGETARCH}${TARGETVARIANT}.tar.gz" piper_phonemize/
+  cp -dR /build/install/* ./piper_phonemize/ && \
+  tar -czf "piper-phonemize_${TARGETARCH}${TARGETVARIANT}.tar.gz" piper_phonemize/
 
 # -----------------------------------------------------------------------------
 
