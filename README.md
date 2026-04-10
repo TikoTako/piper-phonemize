@@ -18,8 +18,9 @@ if you change onnxruntime and/or the python version dont forget to also update<b
 ``RUN sed -i 's|__version__ = "1.2.0"|__version__ = "1.2.0+onnxruntime1.24.4"|g' setup.py``<br/>
 ``RUN sed -i 's|python_requires=">=3.7"|python_requires=">=3.12"|g' setup.py``<br/>
 
-## HOW TO BUILD:<br/>
+## HOW TO BUILD:
 just run ``docker buildx build . -t piper-phonemize --output 'type=local,dest=dist'``
+
 <br/><br/><br/><br/>
 ---
 
